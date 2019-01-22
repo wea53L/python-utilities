@@ -1,6 +1,4 @@
-# just reads the contents of a directory to build a super simple index.html
-# intended use is to build a gif index. 
-# 2015 Warren Kopp - if you think you can use this, feel free
+# defaults
 
 import os
 
@@ -23,7 +21,6 @@ contents_bottom ='''     </section>
 def list_gifs():
 	path = "c:\inetpub\wwwroot\_gif"
 	inc_ext = ['gif']
-	# filter and build page listing only .gif
 	file_names = [fn for fn in os.listdir(path) if any(fn.endswith(ext) for ext in inc_ext)]
 	return file_names
 
@@ -47,3 +44,4 @@ def write_html(text, filename):
     output = open(filename, "w")
     output.write(text)
     output.close()
+
